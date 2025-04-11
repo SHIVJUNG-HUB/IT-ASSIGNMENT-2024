@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jung Camping and Gear | Shop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #0ec3f0;
+            color: #0a0a0a;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: #ffffff;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            color: #000000;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: #000000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+        }
+        
+        .page-header {
+            background-color: #435388
+            padding: 40px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .page-header h1 {
+            color: #2c3e50;
+            font-size: 36px;
+        }
+        
+        .shop-container {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .filters {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .filter-section {
+            margin-bottom: 20px;
+        }
+        
+        .filter-section h3 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .filter-options label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .product {
+            background-color: rgb(255, 255, 255);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 15px;
+        }
+        
+        .product-title {
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+        
+        .product-price {
+            color: #3498db;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        footer {
+            background-color: #fff7f2;
+            color: rgb(0, 0, 0);
+            padding: 30px 0 15px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .shop-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Jung <span>Camping</span></div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+                <div class="mobile-menu">☰</div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Shop Our Products</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="shop-container">
+            <div class="filters">
+                <div class="filter-section">
+                    <h3>Categories</h3>
+                    <div class="filter-options">
+                        <label><input type="checkbox"> Tents & Shelters</label>
+                        <label><input type="checkbox"> Sleeping Bags</label>
+                        <label><input type="checkbox"> Backpacks</label>
+                        <label><input type="checkbox"> Cooking Equipment</label>
+                        <label><input type="checkbox"> Hiking Gear</label>
+                    </div>
+                </div>
+                
+                <div class="filter-section">
+                    <h3>Price Range</h3>
+                    <div class="filter-options">
+                        <label><input type="checkbox"> Under $50</label>
+                        <label><input type="checkbox"> $50 - $100</label>
+                        <label><input type="checkbox"> $100 - $200</label>
+                        <label><input type="checkbox"> Over $200</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product">
+                    <img src="tetnt.jpg" alt="Tent">
+                    <div class="product-info">
+                        <h3 class="product-title">4-Season Expedition Tent</h3>
+                        <p class="product-price">$249.99</p>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product">
+                    <img src="sleeping back.jpg" alt="Sleeping Bag">
+                    <div class="product-info">
+                        <h3 class="product-title">Ultralight Sleeping Bag</h3>
+                        <p class="product-price">$129.99</p>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product">
+                    <img src="backpack.jpg" alt="Backpack">
+                    <div class="product-info">
+                        <h3 class="product-title">65L Hiking Backpack</h3>
+                        <p class="product-price">$179.99</p>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product">
+                    <img src="stove.jpg" alt="Cooking Stove">
+                    <div class="product-info">
+                        <h3 class="product-title">Portable Camping Stove</h3>
+                        <p class="product-price">$89.99</p>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product">
+                    <img src="filter.jpg" alt="Water Filter">
+                    <div class="product-info">
+                        <h3 class="product-title">Compact Water Filter</h3>
+                        <p class="product-price">$49.99</p>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product">
+                    <img src="led lamp.jpeg" alt="Headlamp">
+                    <div class="product-info">
+                        <h3 class="product-title">LED Headlamp</h3>
+                        <p class="product-price">$34.99</p>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Jung ko Camping & Gear. All Rights Reserved.</p>
+            <p>Ruru Dham Gulmi | Phone:+977-9762741795</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>
