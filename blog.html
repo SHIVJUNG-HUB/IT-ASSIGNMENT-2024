@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jung Camping and Gear | Blog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: #2c3e50;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: #3498db;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        .nav-links a.active {
+            color: #3498db;
+        }
+        
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+        }
+        
+        /* Blog Content */
+        .blog-section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 30px;
+            color: #2c3e50;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .blog-post {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .blog-post:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-post img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        
+        .blog-content {
+            padding: 20px;
+        }
+        
+        .blog-date {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .blog-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .blog-excerpt {
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .featured-post {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .featured-post img {
+            height: 400px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            background-color: #2c3e50;
+            padding: 50px 0;
+            color: white;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .newsletter h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+        }
+        
+        .newsletter-form button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 0 15px;
+            text-align: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: #2c3e50;
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .featured-post {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input {
+                border-radius: 4px;
+                margin-bottom: 10px;
+            }
+            
+            .newsletter-form button {
+                border-radius: 4px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Jung <span>Camping</span></div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                </ul>
+                <div class="mobile-menu">☰</div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="blog-section">
+        <div class="container">
+            <h2 class="section-title">Our Camping Blog</h2>
+            
+            <div class="featured-post">
+                <img src="camping.jpg" alt="Featured camping spot">
+                <div class="blog-content">
+                    <p class="blog-date">April 5, 2025</p>
+                    <h3 class="blog-title">Top 10 Hidden Camping Spots in the Himalayas</h3>
+                    <p class="blog-excerpt">Discover breathtaking, off-the-beaten-path camping destinations that showcase the best of the Himalayan landscape. From serene lakes to panoramic mountain views, these hidden gems will elevate your camping experience to new heights.</p>
+                    <p class="blog-excerpt">We've spent months exploring the lesser-known regions to bring you this exclusive guide to the most pristine camping locations that remain untouched by mass tourism.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div>
+            
+            <div class="blog-grid">
+                <div class="blog-post">
+                    <img src="camping gear .jpg" alt="Camping Gear Maintenance">
+                    <div class="blog-content">
+                        <p class="blog-date">March 28, 2025</p>
+                        <h3 class="blog-title">Essential Gear Maintenance Tips for Longer-Lasting Equipment</h3>
+                        <p class="blog-excerpt">Learn how to properly maintain your camping gear to ensure it lasts for years to come. From waterproofing tents to cleaning sleeping bags, these expert tips will save you money and enhance your outdoor experience.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="blog-post">
+                    <img src="campfire cooking.jpg" alt="Campfire Cooking">
+                    <div class="blog-content">
+                        <p class="blog-date">March 21, 2025</p>
+                        <h3 class="blog-title">Gourmet Campfire Cooking: Beyond Hotdogs and Marshmallows</h3>
+                        <p class="blog-excerpt">Elevate your outdoor culinary skills with these delicious yet simple recipes that can be prepared with minimal equipment. Impress your fellow campers with meals that taste like they came from a restaurant kitchen.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="blog-post">
+                    <img src="winter campain.jpeg" alt="Winter Camping">
+                    <div class="blog-content">
+                        <p class="blog-date">March 14, 2025</p>
+                        <h3 class="blog-title">Winter Camping: Embracing the Cold for an Unforgettable Adventure</h3>
+                        <p class="blog-excerpt">Don't let the cold weather stop your camping adventures. With proper preparation and the right gear, winter camping can offer solitude, stunning snow-covered landscapes, and a unique outdoor experience few get to enjoy.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="blog-post">
+                    <img src="family camping.jpg" alt="Family Camping">
+                    <div class="blog-content">
+                        <p class="blog-date">March 7, 2025</p>
+                        <h3 class="blog-title">Family Camping Guide: Creating Memories with Kids of All Ages</h3>
+                        <p class="blog-excerpt">Transform your family camping trips into adventures that children will cherish forever. From engaging activities to safety tips, this comprehensive guide helps parents introduce the joy of nature to the next generation.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <h3>Subscribe to Our Camping Newsletter</h3>
+            <p>Get the latest camping tips, gear reviews, and exclusive offers delivered straight to your inbox.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Jung Camping & Gear. All Rights Reserved.</p>
+            <p>Devinagar, Butwal | Phone: +977-9762741795</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>
